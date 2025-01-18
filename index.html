@@ -13,33 +13,58 @@
             margin:0;
             padding:0;
             font-family:'Open Sans', Helvetica, Arial, sans-serif;
-            color:#543D5E;
-            color:rgba(84,61,94,0.75);
-            background-color:#FFF1EB;
+            color:#FFFFFF;
+            background-color:#000000;
           }
           #title {
-            color:#543D5E;
+            color:#FFFFFF;
             font-size:2.5em;
-            color:rgba(84,61,94,0.9);
             font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
             margin:0; padding:0;
           }
           a {
-            color:rgba(84,61,94,0.9);
+            color:#FFFFFF;
             text-decoration:none;
-            border-bottom:1px dotted #543D5E;
+            border-bottom:1px dotted #FFFFFF;
           }
           #text {
             position:absolute;
             max-width:300px;
             top:16px;
             left:16px;
-            background-color:rgba(255,241,235,0.55);
-            box-shadow:0 0 15px 5px rgba(255,241,235,0.55);
+            background-color:rgba(0,0,0,0.55);
+            box-shadow:0 0 15px 5px rgba(0,0,0,0.55);
           }
           .source {
             margin-bottom:0.5em;
             font-size:14px;
+          }
+          #controls {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            background-color: rgba(0,0,0,0.55);
+            box-shadow: 0 0 15px 5px rgba(0,0,0,0.55);
+            padding: 16px;
+            border-radius: 4px;
+          }
+          .slider-container {
+            margin: 8px 0;
+          }
+          .slider-container label {
+            display: inline-block;
+            width: 120px;
+            color: #FFFFFF;
+          }
+          input[type="range"] {
+            width: 150px;
+            vertical-align: middle;
+          }
+          .value-display {
+            display: inline-block;
+            width: 40px;
+            color: #FFFFFF;
+            margin-left: 8px;
           }
         </style>
     </head>
@@ -63,6 +88,30 @@
           </p>
         </div>
       </article>
+      
+      <div id="controls">
+        <div class="slider-container">
+          <label for="numBoids">Number of Boids:</label>
+          <input type="range" id="numBoids" min="10" max="300" step="5" value="150">
+          <span class="value-display" id="numBoidsValue">150</span>
+        </div>
+        <div class="slider-container">
+          <label for="speedLimit">Speed Limit:</label>
+          <input type="range" id="speedLimit" min="0.1" max="2" step="0.01" value="1">
+          <span class="value-display" id="speedLimitValue">1.000</span>
+        </div>
+        <div class="slider-container">
+          <label for="acceleration">Acceleration:</label>
+          <input type="range" id="acceleration" min="0.01" max="0.5" step="0.01" value="0.25">
+          <span class="value-display" id="accelerationValue">0.250</span>
+        </div>
+        <div class="slider-container">
+          <label for="attractorStrength">Attractor Strength:</label>
+          <input type="range" id="attractorStrength" min="0.01" max="0.3" step="0.01" value="0.15">
+          <span class="value-display" id="attractorStrengthValue">0.150</span>
+        </div>
+      </div>
+      
       <script type="text/javascript" src="bundle.js"></script>
     </body>
 </html>
